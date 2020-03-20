@@ -16,3 +16,9 @@ Java algorithms and implementations I learn in my university
 3. BinarySearch = Added Java binary searching algorithm
 
 4. LinearSearch = Added Java linear searching algorithm
+
+5. BubbleSorting = Added Java data sorting with bubblesort algorithm
+
+6. TP IMA Part 1 = Added Tugas Pendahuluan "Implementasi Algoritma" (from Java Scanner until Java functional and procedure methods)
+
+7. TP IMA Part 2 = Added Tugas Pendahuluan "Implementasi Algoritma" (from Java For loops until Java testing)
