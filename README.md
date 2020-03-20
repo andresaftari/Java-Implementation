@@ -12,3 +12,7 @@ Java algorithms and implementations I learn in my university
 - Linear Probing = Example of Linear Probing hashfunction
 - Quadratic Probing = Example of Quadratic/Doubled Probing hashfunction
 - Separated Chaining = Example of Separated Chaining hashfunction with two strings implementation
+
+3. BinarySearch = Added Java binary searching algorithm
+
+4. LinearSearch = Added Java linear searching algorithm
