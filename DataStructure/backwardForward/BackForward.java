@@ -2,6 +2,8 @@ package DataStructure.backwardForward;
 
 import java.util.Stack;
 
+// Untuk program ini, kita tidak perlu membuat Plain Old Java Object (POJO) sebagai Generic class yang membawa data object 
+// dari element-element yang akan kita gunakan, karena sudah semua di implementasikan di Object kelas ini
 public class BackForward {
     // Inisialisasi Stack Object class String
     private Stack<String> backStack;
