@@ -41,6 +41,7 @@ public class LinearProbing {
             array[arrayIndex] = newElementValue;
         }
     }
+    
     LinearProbing(int size) {
         arraySize = size;
         theArray = new String[size];
