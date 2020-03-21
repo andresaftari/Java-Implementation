@@ -3,6 +3,9 @@ package JawabanSoalTeori.LinearProbing;
 import java.util.Arrays;
 import java.util.Scanner;
 
+// Menunjukkan sistem penanganan index collision saat ada value yang memiliki nilai modulus index 
+// yang sama dengan value lain menggunakan Linear Probing.
+
 public class LinearProbing {
     String[] theArray;
     int arraySize;
