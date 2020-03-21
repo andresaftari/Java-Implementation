@@ -52,7 +52,7 @@ public class MusicPlayer {
         while (iterator.hasNext()) {   //(6)
             System.out.println("Memainkan lagu ke- " + i);
             System.out.println(iterator.next());
-            // Setelah memainkan iterasi 1, maka iterator akan berpindah ke List Node selanjutnya
+            // Setelah mengerjakan iterasi 1, maka iterator akan berpindah ke List Node selanjutnya
             i++;
             // Lalu sebelum while looping selesai, lakukan increment terhadap index (i)
         }
@@ -68,7 +68,7 @@ public class MusicPlayer {
         while (iterator.hasNext()){   //(8)
             System.out.println("Memainkan lagu ke- " + i);
             System.out.println(iterator.next());
-            // Setelah memainkan iterasi 1, maka iterator akan berpindah ke List Node selanjutnya
+            // Setelah mengerjakan iterasi 1, maka iterator akan berpindah ke List Node selanjutnya
             i--; //(9)
             // Lalu sebelum while looping selesai, lakukan decrement terhadap index (i)
         }
