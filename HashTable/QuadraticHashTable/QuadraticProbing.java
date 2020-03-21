@@ -23,7 +23,7 @@ public class QuadraticProbing {
 
             // Cycle sampai ditemukan empty spaces
             while (!theArray[arrayIndex].equals("-1")) {
-                arrayIndex = (int) (arraySize + Math.pow(x, 2)) % theArray.length;
+                arrayIndex = (int) (arrayIndex + Math.pow(x, 2)) % theArray.length;
 
                 x++;
             }
