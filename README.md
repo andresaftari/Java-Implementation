@@ -1,4 +1,6 @@
 # Java-Implementation
+# Disclaimer! Please use this source code FOR EDUCATIONAL PURPOSE ONLY, not for PLAGIARISM. If you want to download or clone these source codes, USE IT WISELY! THANK YOU
+
 Java algorithms and implementations I learn in my university
 
 1. DataStructure = Added Java data structure implementations combined with object-oriented style programming
