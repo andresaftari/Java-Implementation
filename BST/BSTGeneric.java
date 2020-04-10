@@ -59,7 +59,8 @@ public class BSTGeneric {
         }
         while (true);
     }
-
+    
+    // Generic class of Nodes (Vertex)
     static class Nodes {
         Nodes left, right;
         Integer data;
@@ -98,7 +99,8 @@ public class BSTGeneric {
                 rootNode.setLeft(temporary);
             }
     }
-
+    
+    // Level Order (Starts with root, continue with level-based traversal)
     private void printLevelOrder(Nodes rootNode) {
         if (rootNode == null) return;
         Queue<Nodes> nodeQueue = new LinkedList<>();
@@ -112,7 +114,7 @@ public class BSTGeneric {
         }
     }
 
-    // Pre Order solution
+    // Pre Order solution (Starts from root, continue with left side, ends with right side)
     private void printPreOrder(Nodes node) {
         if (node != null) {
             System.out.print(node.data + " ");
@@ -121,7 +123,7 @@ public class BSTGeneric {
         }
     }
 
-    // In Order solution
+    // In Order solution (Starts from left side, to the root, ends with right side)
     private void printInOrder(Nodes node) {
         if (node != null) {
             printInOrder(node.left);
@@ -130,7 +132,7 @@ public class BSTGeneric {
         }
     }
 
-    // Post Order solution
+    // Post Order solution (Starts from left side, continue with right side, ends with root)
     private void printPostOrder(Nodes node) {
         if (node != null) {
             printPostOrder(node.left);
