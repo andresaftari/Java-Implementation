@@ -55,7 +55,7 @@ public class BSTrecursive {
         while (true);
     }
 
-    // Levelorder
+    // Levelorder (Starts from root, continue level by level for both sides)
     private void printLevelOrder(Node rootNode) {
         if (rootNode == null) return;
         Queue<Node> nodeQueue = new LinkedList<>();
@@ -70,7 +70,7 @@ public class BSTrecursive {
         }
     }
 
-    // Print with Inorder version
+    // Print with Inorder version (Starts from left side, to the root, ends with right side)
     private void printInOrder(Node rootNode) {
         if (rootNode == null) return;
 
@@ -79,7 +79,7 @@ public class BSTrecursive {
         printInOrder(rootNode.getRight());
     }
 
-    // Print with Preorder version
+    // Print with Preorder version (Starts from root, continue with left side, ends with right side)
     private void printPreOrder(Node rootNode) {
         if (rootNode == null) return;
 
@@ -88,7 +88,7 @@ public class BSTrecursive {
         printPreOrder(rootNode.getRight());
     }
 
-    // Print with PostOrder version
+    // Print with PostOrder version (Starts from left side, continue with right side, ends with root)
     private void printPostOrder(Node rootNode) {
         if (rootNode == null) return;
 
@@ -120,6 +120,7 @@ public class BSTrecursive {
     }
 }
 
+// Generic class of Nodes (Vertex)
 class Node {
     private Integer data;
     private Node left, right;
