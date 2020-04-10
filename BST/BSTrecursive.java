@@ -123,7 +123,7 @@ public class BSTrecursive {
     }
 }
 
-// Generic class of Nodes (Vertex)
+// Generic class of Nodes (Vertex), you may use different file to separate Generics (POJO) from this Driver (Main) Class
 class Node {
     private Integer data;
     private Node left, right;
