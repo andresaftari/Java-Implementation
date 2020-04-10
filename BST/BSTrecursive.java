@@ -12,16 +12,19 @@ public class BSTrecursive {
         BSTrecursive operator = new BSTrecursive();
 
         operator.addNode(operator.rootNode, 23);
+        operator.addNode(operator.rootNode, 62);
         operator.addNode(operator.rootNode, 53);
         operator.addNode(operator.rootNode, 85);
-        operator.addNode(operator.rootNode, 40);
-        operator.addNode(operator.rootNode, 35);
+        operator.addNode(operator.rootNode, 88);
+        operator.addNode(operator.rootNode, 58);
         operator.addNode(operator.rootNode, 11);
-        operator.addNode(operator.rootNode, 39);
+        operator.addNode(operator.rootNode, 1);
+        operator.addNode(operator.rootNode, 5);
+        operator.addNode(operator.rootNode, 9);
+        operator.addNode(operator.rootNode, 20);
         operator.addNode(operator.rootNode, 72);
-        operator.addNode(operator.rootNode, 63);
-        operator.addNode(operator.rootNode, 69);
-        operator.addNode(operator.rootNode, 96);
+        operator.addNode(operator.rootNode, 67);
+        operator.addNode(operator.rootNode, 78);
 
         do {
             System.out.println("1. Use Level Order Traversal\n2. Use Preorder Traversal\n3. Use Inorder Traversal\n4. Use Postorder Traversal\n5. Exit");
