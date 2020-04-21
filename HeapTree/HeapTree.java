@@ -7,6 +7,8 @@ public class HeapTree {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         do {
+            // Original Tree adalah complete binary tree dari soal, raw tree yang belum diubah menjadi min-heap ataupun
+            // max-heap
             System.out.println("\nOriginal Tree : 25 23 30 15 6 45 27 10 33 7");
             System.out.println("Choose solution :\n1. Max-Heap with Heapsort\n2. Min-Heap with Heapsort\n" +
                     "3. Max-Heap only\n4. Min-Heap only\n5. Exit");
@@ -18,6 +20,7 @@ public class HeapTree {
                     System.out.print("Max Heap : ");
                     HeapTreeOps max = new HeapTreeOps(256, 0);
 
+                    // Insertion setiap element satu persatu untuk membentuk Max-Heap tree
                     max.insert(25);
                     max.insert(23);
                     max.insert(30);
@@ -29,16 +32,19 @@ public class HeapTree {
                     max.insert(33);
                     max.insert(7);
 
+                    // Mencetak output berupa Max-Heap tree dengan bentuk array dan heap tree format
                     max.displayHeap();
 
-                    System.out.print("Ascending order (Max Heapsort) : ");
-                    max.ascOrder();
+                    // Mencetak Heapsort dengan prioritas maksimum
+                    System.out.print("Max priority Heapsort (Descending order) : ");
+                    max.heapsort();
                     break;
 
                 case 2:
                     System.out.print("Min Heap : ");
                     HeapTreeOps min = new HeapTreeOps(256, 1);
 
+                    // Insertion setiap element satu persatu untuk membentuk Min-Heap tree
                     min.insert(25);
                     min.insert(23);
                     min.insert(30);
@@ -50,16 +56,19 @@ public class HeapTree {
                     min.insert(33);
                     min.insert(7);
 
+                    // Mencetak output berupa Min-Heap tree dengan bentuk array dan heap tree format
                     min.displayHeap();
 
-                    System.out.print("Descending order (Min Heapsort) : ");
-                    min.descOrder();
+                    // Mencetak Heapsort dengan prioritas minimum
+                    System.out.print("Min priority Heapsort (Ascending order) : ");
+                    min.heapsort();
                     break;
 
                 case 3:
                     System.out.print("Max Heap : ");
                     HeapTreeOps max2 = new HeapTreeOps(256, 0);
 
+                    // Insertion setiap element satu persatu untuk membentuk Max-Heap tree
                     max2.insert(25);
                     max2.insert(23);
                     max2.insert(30);
@@ -71,6 +80,7 @@ public class HeapTree {
                     max2.insert(33);
                     max2.insert(7);
 
+                    // Mencetak Heapsort dengan prioritas maksimum
                     max2.displayHeap();
                     break;
 
@@ -78,6 +88,7 @@ public class HeapTree {
                     System.out.print("Min Heap : ");
                     HeapTreeOps min2 = new HeapTreeOps(256, 1);
 
+                    // Insertion setiap element satu persatu untuk membentuk Min-Heap tree
                     min2.insert(25);
                     min2.insert(23);
                     min2.insert(30);
@@ -89,6 +100,7 @@ public class HeapTree {
                     min2.insert(33);
                     min2.insert(7);
 
+                    // Mencetak output berupa Min-Heap tree dengan bentuk array dan heap tree format
                     min2.displayHeap();
                     break;
 
@@ -110,62 +122,59 @@ class HeapTreeOps {
     private int size;
     private int minMaxFlag;
 
+    // HeapTreeOps constructor
     HeapTreeOps(int max, int minMaxFlag) {
         heap = new int[max];
         size = 0;
         this.minMaxFlag = minMaxFlag;
     }
 
-    private int parentIndex(int index) {
+    // Mendeklarasikan parent node index
+    private int parentNode(int index) {
         return (index - 1) / 2;
     }
 
-    private int leftChildIndex(int index) {
+    // Mendeklarasikan left child index
+    private int onLeftChild(int index) {
         return (2 * index) + 1;
     }
 
-    private int rightChildIndex(int index) {
+    // Mendeklarasikan right child index
+    private int onRightChild(int index) {
         return (2 * index) + 2;
     }
 
+    // Element insertion  method
     void insert(int element) {
-        if (size == 0) {
-            heap[size++] = element;
-        } else {
+        // Apabila size array heap masih 0, isi tiap index (incremental index) dalam heap array dengan element
+        if (size == 0) heap[size++] = element;
+        else {
+            // Kalau telah terisi, lakukan operasi Heapify Up
             heap[size] = element;
             heapifyUp(size++);
         }
     }
 
-    // max/min heap based on flag
+    // Heapify Up method menjalankan operasi Heapify Up berdasarkan Min/Max flag yang ditentukan
     private void heapifyUp(int index) {
         int temp = heap[index];
-        int parent = parentIndex(index);
-        if (this.minMaxFlag == 0) {
+        int parent = parentNode(index);
+        if (this.minMaxFlag == 0)
             while (index > 0 && heap[parent] < temp) {
                 heap[index] = heap[parent];
                 index = parent;
-                parent = parentIndex(index);
-
+                parent = parentNode(index);
             }
-        } else {
+        else
             while (index > 0 && heap[parent] > temp) {
                 heap[index] = heap[parent];
                 index = parent;
-                parent = parentIndex(index);
-
+                parent = parentNode(index);
             }
-        }
         heap[index] = temp;
     }
 
-    private int remove() {
-        int temp = heap[0];
-        heap[0] = heap[--size];
-        heapifyDown(0);
-        return temp;
-    }
-
+    // Heapify Down method menjalankan operasi Heapify Down berdasarkan Min/Max flag yang ditentukan
     private void heapifyDown(int index) {
         int lcIndex;
         int rcIndex;
@@ -174,10 +183,10 @@ class HeapTreeOps {
         int largeChildIndex;
         int smallChilIndex;
 
-        if (minMaxFlag == 0) {
+        if (minMaxFlag == 0)
             while (index < (size / 2)) {
-                lcIndex = leftChildIndex(index);
-                rcIndex = rightChildIndex(index);
+                lcIndex = onLeftChild(index);
+                rcIndex = onRightChild(index);
 
                 if (rcIndex < size && heap[lcIndex] < heap[rcIndex]) largeChildIndex = rcIndex;
                 else largeChildIndex = lcIndex;
@@ -187,10 +196,10 @@ class HeapTreeOps {
                 heap[index] = heap[largeChildIndex];
                 index = largeChildIndex;
             }
-        } else
+        else
             while (index < (size / 2)) {
-                lcIndex = leftChildIndex(index);
-                rcIndex = rightChildIndex(index);
+                lcIndex = onLeftChild(index);
+                rcIndex = onRightChild(index);
 
                 if (rcIndex < size && heap[lcIndex] > heap[rcIndex]) smallChilIndex = rcIndex;
                 else smallChilIndex = lcIndex;
@@ -203,16 +212,20 @@ class HeapTreeOps {
         heap[index] = temp;
     }
 
-    void descOrder() {
+    // Method remove untuk menghapus setiap kali heap telah di heapify atau di sorting
+    private int remove() {
+        int temp = heap[0];
+        heap[0] = heap[--size];
+        heapifyDown(0);
+        return temp;
+    }
+
+    void heapsort() {
         for (int i = 0; i < 10; i++) System.out.print(remove() + "\t");
         System.out.println("\n");
     }
 
-    void ascOrder() {
-        for (int i = 0; i < 10; i++) System.out.print(remove() + "\t");
-        System.out.println("\n");
-    }
-
+    // Mencetak output berupa Heap tree format (tidak hanya array format)
     void displayHeap() {
         for (int i = 0; i < size; i++) {
             if (heap[i] != Integer.MAX_VALUE) System.out.print(heap[i] + " ");
@@ -244,5 +257,3 @@ class HeapTreeOps {
         System.out.println("\n" + delimeter);
     }
 }
-
-
