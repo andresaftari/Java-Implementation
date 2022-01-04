@@ -2,6 +2,7 @@
 # Disclaimer! Please use this source code FOR EDUCATIONAL PURPOSE ONLY, not for PLAGIARISM. THANK YOU :)
 
 Java algorithms and implementations I learn in my university
+Data structured and basic algo
 
 1. DataStructure = Added Java data structure implementations combined with object-oriented style programming
 - ArrayList = Example of ArrayList Java data structure
