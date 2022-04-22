@@ -1,6 +1,6 @@
 package DataStructure.bakery;
 
-// Kita perlu membuat Plain Old Java Object (POJO) sebagai Generic class yang membawa data object dari element-element
+// Kita perlu membuat Plain Old Java Object (POJO) sebagai Object class yang membawa data object dari element-element
 // yang akan kita gunakan
 public class BreadItem {
     private int nomorAntre, jumlah;
