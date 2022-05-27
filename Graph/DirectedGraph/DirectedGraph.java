@@ -29,9 +29,6 @@ public class DirectedGraph<T> {
     public static void main(String[] args) {
         DirectedGraph<String> operator = new DirectedGraph<>();
 
-        // Ketik node nya, yang pertama ditulis itu node asal,
-        // yang kedua adalah node tujuan, ikutin arah panahnya
-        // okay?
         operator.addEdges("A", "B");
         operator.addEdges("A", "D");
         operator.addEdges("A", "E");
