@@ -8,7 +8,6 @@ public class DirectedGraph<T> {
         if (!graphMapper.containsKey(dest)) addNodes(dest);
 
         graphMapper.get(src).add(dest);
-        // Hapus code di bawah ini...
     }
 
     void addNodes(T vertex) {
@@ -20,7 +19,10 @@ public class DirectedGraph<T> {
         StringBuilder strBuilder = new StringBuilder();
         for (T head : graphMapper.keySet()) {
             strBuilder.append("Vertex ").append(head.toString()).append(" --> ");
-            for (T vertexes : graphMapper.get(head)) strBuilder.append(vertexes).append(" ");
+            
+            for (T vertexes : graphMapper.get(head)) {
+                strBuilder.append(vertexes).append(" ");   
+            }
             strBuilder.append("\n");
         }
         return strBuilder.toString();
