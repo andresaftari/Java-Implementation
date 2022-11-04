@@ -1,5 +1,5 @@
 # Java-Implementation
-# Disclaimer! Please use this source code FOR EDUCATIONAL PURPOSE ONLY, not for PLAGIARISM. THANK YOU :)
+# Disclaimer! Please use this source code as your REFERENCES, not for PLAGIARISM. THANK YOU :)
 
 Java algorithms and implementations I learn in my university
 Data structured and basic algo
