@@ -59,9 +59,7 @@ public class Main {
     private static void searchBarang(String nama) {
         // ================ Versi for loop (Pilih aja mau yang mana) ================
         for (BarangBekas barangBekas : list) {
-            if (barangBekas.getNamaPengumpul().equalsIgnoreCase(nama)) {
-                System.out.println(barangBekas);
-            }
+            if (barangBekas.getNamaPengumpul().equalsIgnoreCase(nama)) System.out.println(barangBekas);
         }
 
         // ================ Versi iterator (Pilih aja mau yang mana) ================
@@ -70,9 +68,7 @@ public class Main {
         // while (iterator.hasNext()) {
         //     BarangBekas barangBekas = iterator.next();
 
-        //     if (barangBekas.getNamaPengumpul().equalsIgnoreCase(nama)) {
-        //         System.out.println(barangBekas);
-        //     }
+        //     if (barangBekas.getNamaPengumpul().equalsIgnoreCase(nama)) System.out.println(barangBekas);
         // }
     }
 
