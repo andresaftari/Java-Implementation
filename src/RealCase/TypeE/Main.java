@@ -26,12 +26,14 @@ public class Main {
     private void tambahData(String site) {
         back.push(site);
         history.add(site);
+        // Setiap buka new site, hapus Stack forward
         if (!forward.isEmpty()) forward.clear();
 
         System.out.println("Website " + site + " dibuka");
     }
 
     private void back() {
+        // Stack back harus dicek kosong atau ada isinya
         if (!back.isEmpty()) {
             String value = back.pop();
             forward.push(value);
@@ -43,6 +45,7 @@ public class Main {
     }
 
     private void forward() {
+        // Stack forward harus dicek kosong atau ada isinya
         if (!forward.isEmpty()) {
             String value = forward.pop();
             back.push(value);
@@ -54,6 +57,7 @@ public class Main {
     }
 
     private void history() {
+        // Bisa di-forloop/foreach/iterator, bisa langsung begini
         System.out.println(history);
     }
 }
