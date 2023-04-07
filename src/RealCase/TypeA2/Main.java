@@ -22,6 +22,7 @@ public class Main {
         queue.add(pelanggan);
 
         if (queue.size() > 0) {
+            // Counting bisa langsung dari jumlah queue tapi dikurangin first data (jadi -1)
             int count = queue.size() - 1;
             System.out.println("Terdapat " + count + " pesanan yang sedang diproses");
         }
@@ -31,9 +32,11 @@ public class Main {
         if (queue.isEmpty()) {
             System.out.println("Queue kosong!");
         } else {
+            // Nama dan nomor dipanggil duluan, jadi peek() dulu untuk liat first data
             String nama = queue.peek() != null ? queue.peek().getNama() : "";
             String nomor = queue.peek() != null ? queue.peek().getNama() : "";
-            String pesanan = queue.peek() != null ? queue.peek().getNama() : "";
+            // Pesanan dipanggil setelah peek(), terus poll() untuk liat sekaligus hapus first data
+            String pesanan = queue.peek() != null ? queue.poll().getNama() : "";
 
             System.out.println("Nomor " + nomor + " - " + nama + ", " + pesanan + " siap diambil");
         }
